@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Business Model Canvas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="no-print">
+        <div class="controls">
+            <button id="btn-print" title="Imprimir ou Salvar PDF"><i class="fas fa-print"></i> Imprimir</button>
+            <button id="btn-pdf" title="Gerar PDF (A4 Paisagem)"><i class="fas fa-file-pdf"></i> Gerar PDF</button>
+            <button id="btn-png" title="Salvar como Imagem"><i class="fas fa-file-image"></i> Salvar PNG</button>
+            <button id="btn-clear" title="Limpar todo o Canvas"><i class="fas fa-trash-alt"></i> Limpar</button>
+            <button id="btn-theme" title="Alternar Tema Claro/Escuro"><i class="fas fa-moon"></i></button>
+            <select id="template-selector">
+                <option value="">Carregar Template...</option>
+                <option value="startup">Startup</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="saas">SaaS</option>
+            </select>
+        </div>
+    </header>
+
+    <main id="canvas-container">
+        <div class="canvas-header">
+            <div class="title-section">
+                <h1>The Business Model Canvas</h1>
+            </div>
+            <div class="meta-section">
+                <div class="meta-field">
+                    <label>Designed for:</label>
+                    <input type="text" id="meta-designed-for" placeholder="...">
+                </div>
+                <div class="meta-field">
+                    <label>Designed by:</label>
+                    <input type="text" id="meta-designed-by" placeholder="...">
+                </div>
+                <div class="meta-field">
+                    <label>Date:</label>
+                    <input type="date" id="meta-date">
+                </div>
+                <div class="meta-field">
+                    <label>Version:</label>
+                    <input type="text" id="meta-version" placeholder="1.0">
+                </div>
+            </div>
+        </div>
+
+        <div class="canvas-grid">
+            <!-- Top Row -->
+            <div class="block key-partnerships" data-id="key-partnerships">
+                <div class="block-header">
+                    <i class="fas fa-link"></i>
+                    <h2>Key Partnerships</h2>
+                </div>
+                <div class="content" contenteditable="true" placeholder="Quais são nossos principais parceiros?"></div>
+            </div>
+
+            <div class="block-group-vertical">
+                <div class="block key-activities" data-id="key-activities">
+                    <div class="block-header">
+                        <i class="fas fa-bolt"></i>
+                        <h2>Key Activities</h2>
+                    </div>
+                    <div class="content" contenteditable="true" placeholder="Quais atividades principais nossa proposta de valor exige?"></div>
+                </div>
+                <div class="block key-resources" data-id="key-resources">
+                    <div class="block-header">
+                        <i class="fas fa-industry"></i>
+                        <h2>Key Resources</h2>
+                    </div>
+                    <div class="content" contenteditable="true" placeholder="Quais recursos principais nossa proposta de valor exige?"></div>
+                </div>
+            </div>
+
+            <div class="block value-propositions" data-id="value-propositions">
+                <div class="block-header">
+                    <i class="fas fa-gift"></i>
+                    <h2>Value Propositions</h2>
+                </div>
+                <div class="content" contenteditable="true" placeholder="Que valor entregamos ao cliente?"></div>
+            </div>
+
+            <div class="block-group-vertical">
+                <div class="block customer-relationships" data-id="customer-relationships">
+                    <div class="block-header">
+                        <i class="fas fa-heart"></i>
+                        <h2>Customer Relationships</h2>
+                    </div>
+                    <div class="content" contenteditable="true" placeholder="Que tipo de relacionamento cada um dos nossos segmentos de clientes espera?"></div>
+                </div>
+                <div class="block channels" data-id="channels">
+                    <div class="block-header">
+                        <i class="fas fa-truck"></i>
+                        <h2>Channels</h2>
+                    </div>
+                    <div class="content" contenteditable="true" placeholder="Através de quais canais nossos segmentos de clientes querem ser alcançados?"></div>
+                </div>
+            </div>
+
+            <div class="block customer-segments" data-id="customer-segments">
+                <div class="block-header">
+                    <i class="fas fa-users"></i>
+                    <h2>Customer Segments</h2>
+                </div>
+                <div class="content" contenteditable="true" placeholder="Para quem estamos criando valor?"></div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="block cost-structure" data-id="cost-structure">
+                <div class="block-header">
+                    <i class="fas fa-tags"></i>
+                    <h2>Cost Structure</h2>
+                </div>
+                <div class="content" contenteditable="true" placeholder="Quais são os custos mais importantes inerentes ao nosso modelo de negócio?"></div>
+            </div>
+
+            <div class="block revenue-streams" data-id="revenue-streams">
+                <div class="block-header">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h2>Revenue Streams</h2>
+                </div>
+                <div class="content" contenteditable="true" placeholder="Por qual valor nossos clientes estão realmente dispostos a pagar?"></div>
+            </div>
+        </div>
+
+        <footer class="canvas-footer">
+            <div class="footer-left">
+                <p>Feito por <strong>Core & Patch</strong> | <a href="https://core-patch-website.vercel.app/" target="_blank">Visite nosso site</a></p>
+            </div>
+            <div class="footer-right">
+                <p>Baseado no modelo de Strategyzer.com</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
