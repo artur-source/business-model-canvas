@@ -55,18 +55,14 @@ header {
 
 .header-content {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    gap: 15px;
 }
 
-.logo-container img {
-    height: 80px;
-    width: auto;
-    display: block;
-    margin: 0 auto 10px auto;
+.logo-container {
+    display: none; /* Removido do topo central */
 }
 
 .controls {
@@ -138,8 +134,14 @@ button:hover {
 .meta-section {
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
-    width: 45%;
+    align-items: center;
+    gap: 30px;
+    width: 60%;
+}
+
+.logo-meta img {
+    height: 60px;
+    width: auto;
 }
 
 .meta-field {
