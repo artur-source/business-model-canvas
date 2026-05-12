@@ -133,8 +133,8 @@ button:hover {
 }
 
 .meta-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: flex-end;
     gap: 15px;
     width: 45%;
 }
