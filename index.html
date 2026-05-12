@@ -3,48 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Business Model Canvas</title>
+    <title>Business Model Canvas - RegiFlex</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="no-print">
-        <div class="controls">
-            <button id="btn-print" title="Imprimir ou Salvar PDF"><i class="fas fa-print"></i> Imprimir</button>
-            <button id="btn-pdf" title="Gerar PDF (A4 Paisagem)"><i class="fas fa-file-pdf"></i> Gerar PDF</button>
-            <button id="btn-png" title="Salvar como Imagem"><i class="fas fa-file-image"></i> Salvar PNG</button>
-            <button id="btn-clear" title="Limpar todo o Canvas"><i class="fas fa-trash-alt"></i> Limpar</button>
-            <button id="btn-theme" title="Alternar Tema Claro/Escuro"><i class="fas fa-moon"></i></button>
-            <select id="template-selector">
-                <option value="">Carregar Template...</option>
-                <option value="startup">Startup</option>
-                <option value="ecommerce">E-commerce</option>
-                <option value="saas">SaaS</option>
-            </select>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="assets/images/logo-regiflex.png" alt="RegiFlex Logo">
+            </div>
+            <div class="controls">
+                <select id="template-selector">
+                    <option value="">Carregar Template...</option>
+                    <option value="startup">Startup</option>
+                    <option value="ecommerce">E-commerce</option>
+                    <option value="saas">SaaS</option>
+                </select>
+                <button id="btn-print" title="Imprimir ou Salvar PDF"><i class="fas fa-print"></i> Imprimir</button>
+                <button id="btn-pdf" title="Gerar PDF (A4 Paisagem)"><i class="fas fa-file-pdf"></i> PDF</button>
+                <button id="btn-png" title="Salvar como Imagem"><i class="fas fa-file-image"></i> PNG</button>
+                <button id="btn-clear" title="Limpar todo o Canvas"><i class="fas fa-trash-alt"></i> Limpar</button>
+                <button id="btn-theme" title="Alternar Tema Claro/Escuro"><i class="fas fa-moon"></i></button>
+            </div>
         </div>
     </header>
 
     <main id="canvas-container">
         <div class="canvas-header">
             <div class="title-section">
-                <h1>The Business Model Canvas</h1>
+                <h1>Business Model Canvas</h1>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 5px;">Planejamento Estratégico RegiFlex</p>
             </div>
             <div class="meta-section">
                 <div class="meta-field">
-                    <label>Designed for:</label>
-                    <input type="text" id="meta-designed-for" placeholder="...">
+                    <label>Projetado para:</label>
+                    <input type="text" id="meta-designed-for" placeholder="Nome do Projeto">
                 </div>
                 <div class="meta-field">
-                    <label>Designed by:</label>
-                    <input type="text" id="meta-designed-by" placeholder="...">
+                    <label>Projetado por:</label>
+                    <input type="text" id="meta-designed-by" placeholder="Seu Nome">
                 </div>
                 <div class="meta-field">
-                    <label>Date:</label>
+                    <label>Data:</label>
                     <input type="date" id="meta-date">
                 </div>
                 <div class="meta-field">
-                    <label>Version:</label>
+                    <label>Versão:</label>
                     <input type="text" id="meta-version" placeholder="1.0">
                 </div>
             </div>
@@ -55,7 +64,7 @@
             <div class="block key-partnerships" data-id="key-partnerships">
                 <div class="block-header">
                     <i class="fas fa-link"></i>
-                    <h2>Key Partnerships</h2>
+                    <h2>Parcerias Principais</h2>
                 </div>
                 <div class="content" contenteditable="true" placeholder="Quais são nossos principais parceiros?"></div>
             </div>
@@ -64,14 +73,14 @@
                 <div class="block key-activities" data-id="key-activities">
                     <div class="block-header">
                         <i class="fas fa-bolt"></i>
-                        <h2>Key Activities</h2>
+                        <h2>Atividades Principais</h2>
                     </div>
                     <div class="content" contenteditable="true" placeholder="Quais atividades principais nossa proposta de valor exige?"></div>
                 </div>
                 <div class="block key-resources" data-id="key-resources">
                     <div class="block-header">
                         <i class="fas fa-industry"></i>
-                        <h2>Key Resources</h2>
+                        <h2>Recursos Principais</h2>
                     </div>
                     <div class="content" contenteditable="true" placeholder="Quais recursos principais nossa proposta de valor exige?"></div>
                 </div>
@@ -80,7 +89,7 @@
             <div class="block value-propositions" data-id="value-propositions">
                 <div class="block-header">
                     <i class="fas fa-gift"></i>
-                    <h2>Value Propositions</h2>
+                    <h2>Propostas de Valor</h2>
                 </div>
                 <div class="content" contenteditable="true" placeholder="Que valor entregamos ao cliente?"></div>
             </div>
@@ -89,14 +98,14 @@
                 <div class="block customer-relationships" data-id="customer-relationships">
                     <div class="block-header">
                         <i class="fas fa-heart"></i>
-                        <h2>Customer Relationships</h2>
+                        <h2>Relacionamento com Clientes</h2>
                     </div>
                     <div class="content" contenteditable="true" placeholder="Que tipo de relacionamento cada um dos nossos segmentos de clientes espera?"></div>
                 </div>
                 <div class="block channels" data-id="channels">
                     <div class="block-header">
                         <i class="fas fa-truck"></i>
-                        <h2>Channels</h2>
+                        <h2>Canais</h2>
                     </div>
                     <div class="content" contenteditable="true" placeholder="Através de quais canais nossos segmentos de clientes querem ser alcançados?"></div>
                 </div>
@@ -105,7 +114,7 @@
             <div class="block customer-segments" data-id="customer-segments">
                 <div class="block-header">
                     <i class="fas fa-users"></i>
-                    <h2>Customer Segments</h2>
+                    <h2>Segmentos de Clientes</h2>
                 </div>
                 <div class="content" contenteditable="true" placeholder="Para quem estamos criando valor?"></div>
             </div>
@@ -114,7 +123,7 @@
             <div class="block cost-structure" data-id="cost-structure">
                 <div class="block-header">
                     <i class="fas fa-tags"></i>
-                    <h2>Cost Structure</h2>
+                    <h2>Estrutura de Custos</h2>
                 </div>
                 <div class="content" contenteditable="true" placeholder="Quais são os custos mais importantes inerentes ao nosso modelo de negócio?"></div>
             </div>
@@ -122,7 +131,7 @@
             <div class="block revenue-streams" data-id="revenue-streams">
                 <div class="block-header">
                     <i class="fas fa-money-bill-wave"></i>
-                    <h2>Revenue Streams</h2>
+                    <h2>Fontes de Receita</h2>
                 </div>
                 <div class="content" contenteditable="true" placeholder="Por qual valor nossos clientes estão realmente dispostos a pagar?"></div>
             </div>
@@ -130,10 +139,10 @@
 
         <footer class="canvas-footer">
             <div class="footer-left">
-                <p>Feito por <strong>Core & Patch</strong> | <a href="https://core-patch-website.vercel.app/" target="_blank">Visite nosso site</a></p>
+                <img src="assets/images/logo-regiflex.png" alt="RegiFlex" class="footer-logo">
             </div>
             <div class="footer-right">
-                <p>Baseado no modelo de Strategyzer.com</p>
+                <p>Baseado no modelo de Strategyzer.com | Desenvolvido para <strong>RegiFlex</strong></p>
             </div>
         </footer>
     </main>
