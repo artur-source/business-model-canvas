@@ -82,9 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         try {
             const canvas = await html2canvas(canvasContainer, {
-                scale: 2,
+                scale: 3,
                 useCORS: true,
-                backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--canvas-bg')
+                logging: false,
+                backgroundColor: '#ffffff',
+                windowWidth: 1400
             });
             
             const imgData = canvas.toDataURL('image/png');
@@ -94,11 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 format: 'a4'
             });
 
-            const imgProps = pdf.getImageProperties(imgData);
             const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+            const pdfHeight = pdf.internal.pageSize.getHeight();
+            
+            const margin = 5;
+            const contentWidth = pdfWidth - (2 * margin);
+            const contentHeight = pdfHeight - (2 * margin);
 
-            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            const imgProps = pdf.getImageProperties(imgData);
+            const ratio = imgProps.width / imgProps.height;
+            
+            let renderWidth = contentWidth;
+            let renderHeight = renderWidth / ratio;
+            
+            if (renderHeight > contentHeight) {
+                renderHeight = contentHeight;
+                renderWidth = renderHeight * ratio;
+            }
+
+            const xOffset = (pdfWidth - renderWidth) / 2;
+            const yOffset = (pdfHeight - renderHeight) / 2;
+
+            pdf.addImage(imgData, 'PNG', xOffset, yOffset, renderWidth, renderHeight);
             pdf.save('business-model-canvas.pdf');
         } catch (error) {
             console.error('Erro ao gerar PDF:', error);
@@ -111,9 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
     btnPng.addEventListener('click', async () => {
         try {
             const canvas = await html2canvas(canvasContainer, {
-                scale: 2,
+                scale: 3,
                 useCORS: true,
-                backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--canvas-bg')
+                logging: false,
+                backgroundColor: '#ffffff',
+                windowWidth: 1400
             });
             
             const link = document.createElement('a');

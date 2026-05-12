@@ -312,31 +312,78 @@ button:hover {
     }
 }
 
-/* Print Styles */
-@media print {
+/* Print & PDF Export Styles */
+@media print, .printing-pdf {
     .no-print {
         display: none !important;
     }
+    
     body {
         background: white !important;
+        color: black !important;
     }
+    
     #canvas-container {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        max-width: none;
-        border: none;
-        box-shadow: none;
+        margin: 0 !important;
+        padding: 15px !important;
+        width: 100% !important;
+        max-width: none !important;
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
     }
+    
+    .canvas-header {
+        border-bottom: 1px solid #000 !important;
+    }
+    
+    .title-section h1 {
+        color: black !important;
+    }
+    
+    .meta-field input {
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        padding: 2px 0 !important;
+        border-radius: 0 !important;
+    }
+    
     .canvas-grid {
-        border: 1px solid #000;
+        border: 1px solid #000 !important;
+        border-radius: 0 !important;
     }
+    
     .block {
-        border-right: 1px solid #000;
-        border-bottom: 1px solid #000;
+        border-right: 1px solid #000 !important;
+        border-bottom: 1px solid #000 !important;
+        background: white !important;
+        min-height: 150px !important; /* Ajuste para caber na página */
     }
+    
+    .block-header h2 {
+        color: black !important;
+    }
+    
+    .block-header i {
+        color: black !important;
+    }
+    
+    .content {
+        color: black !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .content:empty:before {
+        content: "" !important;
+    }
+    
+    .canvas-footer {
+        border-top: 1px solid #000 !important;
+    }
+    
     @page {
         size: A4 landscape;
-        margin: 1cm;
+        margin: 0.5cm;
     }
 }
